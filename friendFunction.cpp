@@ -2,15 +2,34 @@
 
 using namespace std;
 
-class Box{
-    private:
-        int length;
+class Complexm{
+    int a,b;
+    friend Complexm sumcomplex(Complexm o1 , Complexm o2);
     public:
-        box(): length()
+        void setnumber(int n1, int n2){
+            a=n1;
+            b=n2;
+        }
+        void printnumber(){
+            cout<<"Your number is "<<a<<" + "<<b << "i"<<endl;
+        }
+};
+
+Complexm :: sumcomplex(Complexm o1 , Complexm o2){
+    Complexm o3;
+    o3.setnumber((o1.a + o2.a), (o1.b + o2.b));
+    return o3;
 }
 
-int main()
-{
 
+int main()
+{   
+    Complexm c1,c2,sum;
+    c1.setnumber(1,4);
+    c1.printnumber();
+    c2.setnumber(5,8);
+    c2.printnumber();
+    sum = sumcomplex(c1,c2);
+    sum.printnumber();    
     return 0;
 }
