@@ -4,18 +4,18 @@ using namespace std;
 
 class Complexm{
     int a,b;
-    friend Complexm sumcomplex(Complexm o1 , Complexm o2);
     public:
         void setnumber(int n1, int n2){
             a=n1;
             b=n2;
         }
+        friend Complexm sumcomplex(Complexm o1 , Complexm o2);
         void printnumber(){
             cout<<"Your number is "<<a<<" + "<<b << "i"<<endl;
         }
 };
 
-Complexm :: sumcomplex(Complexm o1 , Complexm o2){
+Complexm sumcomplex(Complexm o1 , Complexm o2){
     Complexm o3;
     o3.setnumber((o1.a + o2.a), (o1.b + o2.b));
     return o3;
